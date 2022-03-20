@@ -1,0 +1,75 @@
+:root{
+    --animcolor1: red;
+    --animcolor2: rgb(187, 187, 2);
+    background-color: black;
+}
+div.grandcontainer{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 300px auto;
+}
+div.container{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transform-style: preserve-3d; 
+    animation-name: animatt;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+/*
+}
+div.grandcontainer:hover div.container{
+    transform:rotateX(-20deg) rotateY(360deg);
+*/
+}
+div.child1{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transform: rotateY(90deg) translateZ(101px);
+    background-image: linear-gradient(to bottom,var(--animcolor1) 10%,var(--animcolor2) 60%);
+}
+div.child2{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transform-origin: top;
+    transform: rotateY(90deg) translateZ(-101px);
+    background-image: linear-gradient(to bottom,var(--animcolor1) 10%,var(--animcolor2) 60%);
+}
+div.child3{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background-color: var(--animcolor1);
+    transform-origin: top;
+    transform: rotateX(90deg) translateY(-100px);
+}
+div.child4{
+    width: 200px;
+    height: 200px;
+    background-color: var(--animcolor2);
+    position: absolute;
+    transform-origin: bottom;
+    transform: rotateX(-90deg) translateY(100px);
+}
+div.child5{
+    width: 200px;
+    height: 200px;
+    background-image: linear-gradient(to bottom,var(--animcolor1) 10%,var(--animcolor2) 60%);
+    position: absolute;
+    transform: translateZ(100px);
+}
+div.child6{
+    width: 200px;
+    height: 200px;
+    background-image: linear-gradient(to bottom,var(--animcolor1) 10%,var(--animcolor2) 60%);
+    position: absolute;
+    transform: translateZ(-100px);
+}
+@keyframes animatt{
+    from{transform: rotateX(-20deg);}
+    to{transform:rotateX(-20deg) rotateY(360deg);}
+}
